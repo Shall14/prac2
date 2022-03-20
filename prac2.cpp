@@ -48,3 +48,22 @@ int main()
 
     return 0;
 }
+
+int main()
+{
+    int selection = 0;
+    printf("Enter a choice: \n1. ApplePie\n2. RaspberryPie\n3. ApricotPie\n");
+    scanf("%d", &selection);
+
+    Pie* pieptr = NULL;
+    if (selection == 1)
+        pieptr = new ApplePie();
+    else if (selection == 2)
+        pieptr = new RaspberryPie();
+    else
+        pieptr = new ApricotPie();
+
+    printf("%s", pieptr->description().c_str());
+
+    return 0;
+}
